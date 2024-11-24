@@ -49,14 +49,28 @@ function EditCourse() {
   };
 
   if (!course) {
-    return <p>Loading course details...</p>;
+    return (
+      <p className="text-center text-lg text-text-primary">
+        Loading course details...
+      </p>
+    );
   }
 
   return (
-    <div className="p-4">
-      <h1 className="text-4xl font-bold mb-4">Edit Course</h1>
-      {message && <p className="text-lg text-green-500 mb-4">{message}</p>}
-      <form onSubmit={handleUpdateSubmit}>
+    <div className="p-4 bg-background-primary text-text-primary min-h-screen">
+      <h1 className="text-4xl font-bold mb-6">Edit Course</h1>
+      {message && (
+        <p
+          className={`text-lg ${
+            message.includes("successfully")
+              ? "text-accent-primary"
+              : "text-red-500"
+          } mb-4`}
+        >
+          {message}
+        </p>
+      )}
+      <form onSubmit={handleUpdateSubmit} className="space-y-6">
         <div className="space-y-4">
           <div>
             <label className="block text-lg font-medium">Course Name</label>
@@ -65,7 +79,7 @@ function EditCourse() {
               name="name"
               value={course.name}
               onChange={handleInputChange}
-              className="w-full p-2 border border-gray-300 rounded-lg"
+              className="w-full p-2 bg-background-secondary text-text-secondary border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-accent-primary"
               required
             />
           </div>
@@ -76,7 +90,7 @@ function EditCourse() {
               name="duration"
               value={course.duration}
               onChange={handleInputChange}
-              className="w-full p-2 border border-gray-300 rounded-lg"
+              className="w-full p-2 bg-background-secondary text-text-secondary border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-accent-primary"
               required
             />
           </div>
@@ -87,7 +101,7 @@ function EditCourse() {
               name="price"
               value={course.price}
               onChange={handleInputChange}
-              className="w-full p-2 border border-gray-300 rounded-lg"
+              className="w-full p-2 bg-background-secondary text-text-secondary border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-accent-primary"
               required
             />
           </div>
@@ -98,7 +112,7 @@ function EditCourse() {
               name="code"
               value={course.code}
               onChange={handleInputChange}
-              className="w-full p-2 border border-gray-300 rounded-lg"
+              className="w-full p-2 bg-background-secondary text-text-secondary border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-accent-primary"
               required
             />
           </div>
@@ -109,7 +123,7 @@ function EditCourse() {
               name="outcome"
               value={course.outcome}
               onChange={handleInputChange}
-              className="w-full p-2 border border-gray-300 rounded-lg"
+              className="w-full p-2 bg-background-secondary text-text-secondary border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-accent-primary"
               required
             />
           </div>
@@ -120,13 +134,13 @@ function EditCourse() {
               name="professor"
               value={course.professor}
               onChange={handleInputChange}
-              className="w-full p-2 border border-gray-300 rounded-lg"
+              className="w-full p-2 bg-background-secondary text-text-secondary border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-accent-primary"
               required
             />
           </div>
           <button
             type="submit"
-            className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600"
+            className="px-4 py-2 bg-accent-primary text-white rounded-lg hover:bg-accent-secondary transition"
           >
             Update Course
           </button>

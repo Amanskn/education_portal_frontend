@@ -5,6 +5,7 @@ import { Home } from "./pages/Home";
 import Navbar from "./components/Navbar";
 import { CreateCourse } from "./pages/CreateCourse";
 import { EditCourse } from "./pages/EditCourse";
+import { Footer } from "./components/Footer";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/create-course" element={<CreateCourse />} />
         <Route path="/edit-course/:id" element={<EditCourse />} />
       </Routes>
+      <Footer />
     </Router>
   );
 }

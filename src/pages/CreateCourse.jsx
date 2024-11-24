@@ -14,7 +14,6 @@ function CreateCourse() {
   });
 
   const navigate = useNavigate();
-
   const [message, setMessage] = useState("");
 
   // Handle input changes
@@ -61,89 +60,140 @@ function CreateCourse() {
   };
 
   return (
-    <div className="p-4">
-      <h1 className="text-4xl font-bold mb-4">Create a New Course</h1>
-      <form onSubmit={handleSubmit} className="space-y-4 max-w-lg">
+    <div className="bg-background-primary text-text-primary min-h-screen p-8 ">
+      <h1 className="text-center text-4xl font-bold mb-6">
+        Create a New Course
+      </h1>
+      {message && (
+        <p
+          className={`text-center text-lg ${
+            message.includes("successfully")
+              ? "text-accent-primary"
+              : "text-red-500"
+          } mb-4`}
+        >
+          {message}
+        </p>
+      )}
+      <form
+        onSubmit={handleSubmit}
+        className="space-y-6 max-w-lg bg-background-secondary p-6 rounded-lg shadow-lg mx-auto"
+      >
         <div>
-          <label className="block text-lg font-medium">Course Name</label>
+          <label
+            htmlFor="name-input"
+            className="block text-lg font-medium mb-1"
+          >
+            Course Name
+          </label>
           <input
+            id="name-input"
             type="text"
             name="name"
             value={courseData.name}
             onChange={handleChange}
-            className="w-full p-2 border border-gray-300 rounded-lg"
+            className="w-full p-3 bg-background-primary border border-border rounded-lg text-text-primary placeholder-text-placeholder focus:outline-none focus:ring focus:ring-accent-primary"
             placeholder="Enter course name"
             required
           />
         </div>
         <div>
-          <label className="block text-lg font-medium">Duration</label>
+          <label
+            htmlFor="duration-input"
+            className="block text-lg font-medium mb-1"
+          >
+            Duration (In weeks)
+          </label>
           <input
-            type="text"
+            id="duration-input"
+            type="number"
             name="duration"
             value={courseData.duration}
             onChange={handleChange}
-            className="w-full p-2 border border-gray-300 rounded-lg"
-            placeholder="e.g., 12 weeks"
+            className="w-full p-3 bg-background-primary border border-border rounded-lg text-text-primary placeholder-text-placeholder focus:outline-none focus:ring focus:ring-accent-primary"
+            placeholder="e.g., For 12 weeks just type 12"
             required
           />
         </div>
         <div>
-          <label className="block text-lg font-medium">Price</label>
+          <label
+            htmlFor="price-input"
+            className="block text-lg font-medium mb-1"
+          >
+            Price (In Rupees)
+          </label>
           <input
-            type="text"
+            id="price-input"
+            type="number"
             name="price"
             value={courseData.price}
             onChange={handleChange}
-            className="w-full p-2 border border-gray-300 rounded-lg"
-            placeholder="e.g., $299"
+            className="w-full p-3 bg-background-primary border border-border rounded-lg text-text-primary placeholder-text-placeholder focus:outline-none focus:ring focus:ring-accent-primary"
+            placeholder="e.g., For ₹5000 just type 5000"
             required
           />
         </div>
         <div>
-          <label className="block text-lg font-medium">Course Code</label>
+          <label
+            htmlFor="code-input"
+            className="block text-lg font-medium mb-1"
+          >
+            Course Code
+          </label>
           <input
+            id="code-input"
             type="text"
             name="code"
             value={courseData.code}
             onChange={handleChange}
-            className="w-full p-2 border border-gray-300 rounded-lg"
+            className="w-full p-3 bg-background-primary border border-border rounded-lg text-text-primary placeholder-text-placeholder focus:outline-none focus:ring focus:ring-accent-primary"
             placeholder="e.g., WD101"
             required
           />
         </div>
         <div>
-          <label className="block text-lg font-medium">Outcome</label>
+          <label
+            htmlFor="outcome-input"
+            className="block text-lg font-medium mb-1"
+          >
+            Outcome
+          </label>
           <input
+            id="outcome-input"
             type="text"
             name="outcome"
             value={courseData.outcome}
             onChange={handleChange}
-            className="w-full p-2 border border-gray-300 rounded-lg"
+            className="w-full p-3 bg-background-primary border border-border rounded-lg text-text-primary placeholder-text-placeholder focus:outline-none focus:ring focus:ring-accent-primary"
             placeholder="e.g., Learn to build websites"
             required
           />
         </div>
         <div>
-          <label className="block text-lg font-medium">Professor</label>
+          <label
+            htmlFor="professor-input"
+            className="block text-lg font-medium mb-1"
+          >
+            Professor
+          </label>
           <input
+            id="professor-input"
             type="text"
             name="professor"
             value={courseData.professor}
             onChange={handleChange}
-            className="w-full p-2 border border-gray-300 rounded-lg"
+            className="w-full p-3 bg-background-primary border border-border rounded-lg text-text-primary placeholder-text-placeholder focus:outline-none focus:ring focus:ring-accent-primary"
             placeholder="e.g., John Doe"
             required
           />
         </div>
         <button
           type="submit"
-          className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600"
+          className="px-6 py-3 bg-accent-primary text-white rounded-lg hover:bg-accent-secondary transition"
         >
           Create Course
         </button>
       </form>
-      {message && <p className="mt-4 text-lg">{message}</p>}
     </div>
   );
 }

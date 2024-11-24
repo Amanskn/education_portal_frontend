@@ -24,7 +24,7 @@ function Courses() {
       .then((data) => {
         if (data.data.length === 0) {
           setMessage(
-            "Hey folks, Courses coming soon, or if you want then you too can create it successfully using Create-A-Course button in the navbar. Enjoy the creation!!"
+            `Hey folks, Courses coming soon, or if you want then you too can create it successfully using "Create-A-Course" button in the navbar. Enjoy the creation!!`
           );
         } else {
           setMessage("");
@@ -85,7 +85,7 @@ function Courses() {
         {courses.map((course) => (
           <div
             key={course._id}
-            className="p-6 bg-background-secondary text-text-secondary border border-border rounded-lg shadow-lg hover:shadow-xl transition"
+            className="p-6 bg-background-secondary text-text-secondary border border-border rounded-lg shadow-lg  hover:bg-background-primary transform transition duration-300"
           >
             <h2 className=" text-2xl font-semibold text-text-primary border-l-8 border-accent-primary pl-4">
               {course.name}

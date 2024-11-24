@@ -29,7 +29,7 @@ function Home() {
       {/* Feature Highlights */}
       <section className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {/* Feature 1 */}
-        <div className="p-6 bg-background-secondary rounded-lg shadow-lg">
+        <div className="p-6 bg-background-secondary rounded-lg shadow-lg hover:shadow-xl hover:bg-background-primary transform transition duration-300">
           <h2 className="text-2xl font-semibold mb-2">Expert Instructors</h2>
           <p className="text-text-secondary">
             Learn from industry leaders with years of experience and in-depth
@@ -38,7 +38,7 @@ function Home() {
         </div>
 
         {/* Feature 2 */}
-        <div className="p-6 bg-background-secondary rounded-lg shadow-lg">
+        <div className="p-6 bg-background-secondary rounded-lg shadow-lg hover:shadow-xl hover:bg-background-primary transform transition duration-300">
           <h2 className="text-2xl font-semibold mb-2">Wide Range of Courses</h2>
           <p className="text-text-secondary">
             Choose from a variety of courses in technology, business, design,
@@ -47,7 +47,7 @@ function Home() {
         </div>
 
         {/* Feature 3 */}
-        <div className="p-6 bg-background-secondary rounded-lg shadow-lg">
+        <div className="p-6 bg-background-secondary rounded-lg shadow-lg hover:shadow-xl hover:bg-background-primary transform transition duration-300">
           <h2 className="text-2xl font-semibold mb-2">Flexible Learning</h2>
           <p className="text-text-secondary">
             Access courses anytime, anywhere, and learn at your own pace.

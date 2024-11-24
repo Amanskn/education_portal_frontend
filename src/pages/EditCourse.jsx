@@ -50,9 +50,11 @@ function EditCourse() {
 
   if (!course) {
     return (
-      <p className="text-center text-lg text-text-primary">
-        Loading course details...
-      </p>
+      <div className="p-4 bg-background-primary text-text-primary min-h-screen">
+        <p className="text-center text-lg text-text-primary">
+          Hold on tight, course details is being loaded into the page...
+        </p>
+      </div>
     );
   }
 
